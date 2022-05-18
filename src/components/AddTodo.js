@@ -8,7 +8,7 @@ const AddTodo = () => {
 
     const onSubmit = data => {
         console.log(data);
-        const url = `http://localhost:5000/list`;
+        const url = `https://secure-escarpment-70053.herokuapp.com/list`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -22,13 +22,14 @@ const AddTodo = () => {
                 if (result) {
                     toast('New Todo added successfully!')
                     reset();
+                    window.location.reload();
                 }
             })
     };
 
     return (
         <div className='w-50 mx-auto text-center m-4'>
-            <h1 className='m-2 text-success'>Add a New Todo Here</h1>
+            <h1 className='m-2 text-dark'>Add a New Todo Here</h1>
             <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
                 <input className='mb-2' placeholder='Name' {...register("name", { required: true, maxLength: 20 })} />
                 <textarea className='mb-2' placeholder='Description' {...register("description")} />

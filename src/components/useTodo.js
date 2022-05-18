@@ -5,7 +5,7 @@ const useTodo = () => {
     const [todo, setTodo] = useState([]);
 
     useEffect(() => {
-        const url = 'http://localhost:5000/list';
+        const url = 'https://secure-escarpment-70053.herokuapp.com/list';
         fetch(url)
             .then(res => res.json())
             .then(data => setTodo(data));
