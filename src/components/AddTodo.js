@@ -32,7 +32,7 @@ const AddTodo = () => {
             <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
                 <input className='mb-2' placeholder='Name' {...register("name", { required: true, maxLength: 20 })} />
                 <textarea className='mb-2' placeholder='Description' {...register("description")} />
-                <input className='my-4 btn btn-success' type="submit" value="Add To Do" />
+                <input className='my-4 btn btn-success' type="submit" value="Add Task" />
             </form>
         </div>
     );
